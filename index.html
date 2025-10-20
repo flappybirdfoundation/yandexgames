@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Flappy Bird — Fullscreen Embed</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Use a neutral system stack; Cal Sans fallback included if available -->
+  <style>
+    :root { --bg: #fff; --fg: #111; }
+    html,body{height:100%}
+    body {
+      margin:0;
+      font-family: "Cal Sans", "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:var(--bg);
+      color:var(--fg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="title">game.flappybird.org</div>
+      <div class="controls">
+        <button id="enterFs">Enter Fullscreen</button>
+        <button id="exitFs" hidden>Exit Fullscreen</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <!-- The iframe takes the entire stage. allowfullscreen and sandbox left permissive to enable fullscreen. -->
+      <iframe id="gameFrame"
+        src="https://game.flappybird.org"
+        frameborder="0"
+        allow="fullscreen; autoplay"
+        allowfullscreen
+        title="Flappy Bird">
+      </iframe>
+    </main>
+
+    <footer class="hint">Tip: Use the Enter Fullscreen button or press F11. Escape exits fullscreen.</footer>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>
